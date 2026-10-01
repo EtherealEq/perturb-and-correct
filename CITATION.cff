@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper below."
+title: "Perturb-and-Correct"
+authors:
+  - family-names: Quint
+    given-names: Eleanor
+    affiliation: "University of Nebraska-Lincoln"
+    email: equint@cse.unl.edu
+license: MIT
+repository-code: "https://github.com/EtherealEq/perturb-and-correct"
+preferred-citation:
+  type: conference-paper
+  title: "Perturb and Correct: Post-Hoc Ensembles using Affine Redundancy"
+  authors:
+    - family-names: Quint
+      given-names: Eleanor
+      affiliation: "University of Nebraska-Lincoln"
+  collection-title: "Advances in Neural Information Processing Systems"
+  year: 2026

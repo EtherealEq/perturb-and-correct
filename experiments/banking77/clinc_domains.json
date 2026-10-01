@@ -1,0 +1,16 @@
+{
+  "_source": "Published CLINC150 intent taxonomy (Larson et al. 2019): 10 domains x 15 in-scope intents + oos. Financial Near-OOD = banking + credit_cards domains. Mapping is taxonomy-based, not model-behavior-based; validated against the dataset's intent.names in data.py.",
+  "financial_near_ood_domains": ["banking", "credit_cards"],
+  "oos_label": "oos",
+  "banking": [
+    "transfer", "transactions", "balance", "freeze_account", "pay_bill",
+    "bill_balance", "bill_due", "interest_rate", "routing", "min_payment",
+    "order_checks", "pin_change", "report_fraud", "account_blocked", "spending_history"
+  ],
+  "credit_cards": [
+    "credit_score", "report_lost_card", "credit_limit", "rewards_balance", "new_card",
+    "application_status", "card_declined", "international_fees", "apr", "redeem_rewards",
+    "credit_limit_change", "damaged_card", "replacement_card_duration",
+    "improve_credit_score", "expiration_date"
+  ]
+}

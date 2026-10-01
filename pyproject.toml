@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "perturb-and-correct"
+version = "1.1.0"
+description = "Post-hoc ensembles from a single pretrained network via random hidden perturbations with least-squares affine correction"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "Eleanor Quint", email = "equint@cse.unl.edu" }]
+keywords = ["uncertainty", "ensembles", "out-of-distribution", "post-hoc", "epistemic"]
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+# The top-level package is framework-free; pick an implementation below.
+dependencies = ["numpy>=1.24"]
+
+[project.optional-dependencies]
+# The two native implementations of the construction.
+jax = ["jax>=0.4.30"]
+torch = ["torch>=2.1"]
+
+# Experiment tracks, each pulling in the implementation it uses.
+mujoco = ["jax>=0.4.30", "flax>=0.12", "optax>=0.2", "gymnasium[mujoco]>=1.0", "minari>=0.5"]
+cifar10 = ["jax>=0.4.30", "flax>=0.12", "optax>=0.2", "pillow>=10.0"]
+imagenet = ["torch>=2.1", "torchvision>=0.16", "pillow>=10.0", "pyarrow>=14.0",
+            "huggingface-hub>=0.20"]
+text = ["torch>=2.1", "transformers>=4.40", "datasets>=2.18"]
+
+dev = ["pytest>=8.0", "ruff>=0.6", "jax>=0.4.30", "torch>=2.1"]
+
+[project.urls]
+Paper = "https://arxiv.org/search/?searchtype=all&query=Perturb+and+Correct+Post-Hoc+Ensembles+Affine+Redundancy"
+
+[tool.setuptools.packages.find]
+include = ["pnc*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]

@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# Data, checkpoints, and outputs are never committed.
+data/
+checkpoints/
+results/
+*.npz
+*.pkl
